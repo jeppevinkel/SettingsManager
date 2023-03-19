@@ -2,6 +2,17 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <Title>Settings Manager</Title>
+        <Description>Simple settings manager to easily and quickly store/retrieve json settings files from local appdata.</Description>
+        <Copyright>Jeppe Vinkel Beier</Copyright>
+        <PackageProjectUrl>https://github.com/jeppevinkel/SettingsManager</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/jeppevinkel/SettingsManager</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
+        <PackageTags>Settings, Config, JSON</PackageTags>
     </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.Text.Json" Version="7.0.2" />
+    </ItemGroup>
 
 </Project>
