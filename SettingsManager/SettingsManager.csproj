@@ -12,6 +12,8 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>jeppdev.SettingsManager</PackageId>
+        <Authors>Jeppe Vinkel Beier</Authors>
     </PropertyGroup>
 
     <ItemGroup>
