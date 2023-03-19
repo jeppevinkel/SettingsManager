@@ -3,6 +3,28 @@ Simple settings manager to easily and quickly store/retrieve json settings files
 
 ## Usage
 
+### Create a settings class
+
+First we create a settings class. We can have as many of these as we want. Each will correspond to a file on the system.
+
+```csharp
+using SettingsManager;
+
+namespace ExampleProgram;
+
+public class MySettings : Setting<MySettings>
+{
+    public string Username { get; set; } = "DefaultName";
+    public bool IsRegistered { get; set; } = false;
+    public float SomeValue { get; set; } = 0;
+    public List<int> Numbers { get; set; } = new();
+}
+```
+
+### Use the settings
+
+Then to use the settings, we simply need to get an instance of the settings file. By using instances, we ensure there's only ever one version and we keep the values consistent throughout the application.
+
 ```csharp
 // Let's grab the instance to make referencing it easier!
 var mySettings = MySettings.Instance;
