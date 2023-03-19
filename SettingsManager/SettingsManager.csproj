@@ -9,10 +9,15 @@
         <RepositoryUrl>https://github.com/jeppevinkel/SettingsManager</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
         <PackageTags>Settings, Config, JSON</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="System.Text.Json" Version="7.0.2" />
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\LICENSE" Pack="true" PackagePath="" />
     </ItemGroup>
 
 </Project>
