@@ -1,32 +1,33 @@
-﻿using ExampleProgram;
+using ExampleProgram;
 
-// Let's grab the instance to make referencing it easier!
-var mySettings = MySettings.Instance;
+// Get the settings instance
+var settings = GameSettings.Instance;
 
-// Here we just print out the values to show them persisting.
-Console.WriteLine($"Username: {mySettings.Username}");
-Console.WriteLine($"IsRegistered: {mySettings.IsRegistered}");
-Console.WriteLine($"SomeValue: {mySettings.SomeValue}");
+// Display current settings
+Console.WriteLine("Current Game Settings:");
+Console.WriteLine($"Master Volume: {settings.MasterVolume * 100}%");
+Console.WriteLine($"Music Volume: {settings.MusicVolume * 100}%");
+Console.WriteLine($"SFX Volume: {settings.SfxVolume * 100}%");
+Console.WriteLine($"Mouse Sensitivity: {settings.MouseSensitivity}x");
+Console.WriteLine($"Invert Y-Axis: {settings.InvertMouseY}");
+Console.WriteLine($"Invert X-Axis: {settings.InvertMouseX}");
 
-Console.WriteLine("Numbers:");
-foreach (var number in mySettings.Numbers)
-{
-    Console.WriteLine($"   - {number}");
-}
+// Example of modifying settings
+Console.WriteLine("\nModifying settings...");
 
-if (!mySettings.IsRegistered)
-{
-    // Now set some new values to see the difference!
-    Console.Write("Please choose a username: ");
-    var newUsername = Console.ReadLine();
-    mySettings.Username = newUsername;
-    mySettings.IsRegistered = true;
-    mySettings.SomeValue = 1.3f;
-    
-    mySettings.Numbers.Add(1);
-    mySettings.Numbers.Add(3);
-    mySettings.Numbers.Add(3);
-    mySettings.Numbers.Add(7);
-    
-    MySettings.Save();
-}
+// Adjust volume (50% master volume)
+settings.MasterVolume = 0.5f;
+
+// Set mouse sensitivity to 1.5x
+settings.MouseSensitivity = 1.5f;
+
+// Enable inverted Y-axis controls
+settings.InvertMouseY = true;
+
+// Save the changes
+GameSettings.Save();
+
+Console.WriteLine("\nSettings saved! New values:");
+Console.WriteLine($"Master Volume: {settings.MasterVolume * 100}%");
+Console.WriteLine($"Mouse Sensitivity: {settings.MouseSensitivity}x");
+Console.WriteLine($"Invert Y-Axis: {settings.InvertMouseY}");
